@@ -7,7 +7,7 @@ export default function AboutSection() {
         <div className="md:w-1/2">
           <h2 className="text-3xl font-bold text-red-500 mb-4">About Me</h2>
           <p className="text-gray-300 mb-4">
-            Hi! I’m <strong>Hasini Navindya</strong>, a passionate Frontend Developer.
+            Hi! Im <strong>Hasini Navindya</strong>, a passionate Frontend Developer.
             I enjoy creating responsive, user-friendly web experiences and learning
             new technologies every day.
           </p>
