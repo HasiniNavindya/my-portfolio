@@ -20,7 +20,7 @@ export default function ContactForm() {
   return (
     <section className="bg-gray-900 text-white py-24 px-6" id="contact">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-red-500 mb-8 text-center">
+  <h2 className="text-3xl font-bold text-primary-dark mb-8 text-center">
           Contact Me
         </h2>
         <form
@@ -55,7 +55,7 @@ export default function ContactForm() {
           />
           <button
             type="submit"
-            className="bg-red-500 hover:bg-red-600 text-white py-3 rounded transition"
+            className="bg-primary hover:bg-primary-dark text-white py-3 rounded transition"
           >
             Send Message
           </button>

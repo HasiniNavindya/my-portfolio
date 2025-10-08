@@ -24,7 +24,7 @@ export default function ProjectsSection() {
   return (
     <section className="bg-gray-950 text-white py-24 px-6" id="projects">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-red-500 mb-12">My Projects</h2>
+  <h2 className="text-3xl font-bold text-primary-dark mb-12">My Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -43,7 +43,7 @@ export default function ProjectsSection() {
                 <a
                   href={project.link}
                   target="_blank"
-                  className="inline-block bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition"
+                  className="inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded transition"
                 >
                   View Project
                 </a>

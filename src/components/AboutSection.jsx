@@ -5,7 +5,7 @@ export default function AboutSection() {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
         {/* Left side: Text */}
         <div className="md:w-1/2">
-          <h2 className="text-3xl font-bold text-red-500 mb-4">About Me</h2>
+          <h2 className="text-3xl font-bold text-primary-dark mb-4">About Me</h2>
           <p className="text-gray-300 mb-4">
             Hi! Im <strong>Hasini Navindya</strong>, a passionate Frontend Developer.
             I enjoy creating responsive, user-friendly web experiences and learning
@@ -23,7 +23,7 @@ export default function AboutSection() {
           <img
             src="/profile.jpg"
             alt="About Me"
-            className="rounded-xl shadow-lg border-4 border-red-500"
+            className="rounded-xl shadow-lg ring-4 ring-primary"
           />
         </div>
       </div>

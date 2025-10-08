@@ -9,7 +9,7 @@ export default function Navbar() {
     <nav className="bg-gray-900 text-white px-6 py-4 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-red-500">
+  <Link href="/" className="text-2xl font-bold text-primary-dark">
           MyPortfolio
         </Link>
 
