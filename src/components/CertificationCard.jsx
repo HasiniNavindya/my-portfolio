@@ -16,7 +16,7 @@ export default function CertificationCard({ cert }) {
   return (
     <>
       <article className="group bg-gray-800/50 border border-white/8 rounded-xl overflow-hidden shadow-sm transform transition-all duration-200 hover:shadow-xl hover:-translate-y-2 hover:scale-105 hover:ring-2 hover:ring-primary-dark/40 hover:z-10">
-        <div className="h-40 w-full relative bg-gray-900">
+        <div className="h-36 md:h-40 w-full relative bg-gray-900">
           <img src={cert.image} alt={`${cert.title} certificate`} className="w-full h-full object-cover" />
         </div>
 
@@ -44,7 +44,7 @@ export default function CertificationCard({ cert }) {
           aria-label={`${cert.title} full certificate`}
           onClick={() => setOpen(false)}
         >
-          <div className="relative max-w-4xl w-full max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
+            <div className="relative max-w-4xl w-full max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setOpen(false)}
               className="absolute -top-3 -right-3 bg-white text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
@@ -53,7 +53,7 @@ export default function CertificationCard({ cert }) {
               ✕
             </button>
 
-            <img src={cert.image} alt={`${cert.title} full certificate`} className="w-full h-full object-contain rounded-lg" />
+            <img src={cert.image} alt={`${cert.title} full certificate`} className="w-full max-h-[80vh] object-contain rounded-lg" />
 
             {cert.link && (
               <div className="mt-3 text-right">

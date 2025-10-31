@@ -20,8 +20,8 @@ export default function AchievementCard({ a }) {
   return (
     <>
       <article className="group bg-gray-800/50 border border-white/8 rounded-xl overflow-hidden shadow-sm transform transition-all duration-200 hover:shadow-xl hover:-translate-y-1 hover:scale-102">
-        <div className="h-44 w-full relative bg-gray-900 overflow-hidden">
-          <img src={a.images[cardIndex]} alt={`${a.title} image ${cardIndex+1}`} className="w-full h-44 object-cover" />
+        <div className="h-36 md:h-44 w-full relative bg-gray-900 overflow-hidden">
+          <img src={a.images[cardIndex]} alt={`${a.title} image ${cardIndex+1}`} className="w-full h-36 md:h-44 object-cover" />
 
           <button type="button" aria-label="Previous image" onClick={(e) => { e.stopPropagation(); setCardIndex((ci) => (ci - 1 + (a.images?.length || 1)) % (a.images?.length || 1)); }} className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white rounded-full p-2 hover:bg-black/60 z-30">
             ◀
@@ -49,14 +49,14 @@ export default function AchievementCard({ a }) {
 
       {open ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" role="dialog" aria-modal="true" aria-label={`${a.title} gallery`} onClick={() => setOpen(false)}>
-          <div className="relative max-w-4xl w-full max-h-[90vh] bg-transparent" onClick={(e) => e.stopPropagation()}>
+            <div className="relative max-w-4xl w-full max-h-[90vh] bg-transparent" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setOpen(false)} className="absolute -top-3 -right-3 bg-white text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow-lg" aria-label="Close">✕</button>
 
-            <div className="flex items-center gap-4">
-              <button onClick={(e) => { e.stopPropagation(); setModalIndex((i) => (i - 1 + (a.images?.length || 1)) % (a.images?.length || 1)); }} className="p-2 bg-white/10 rounded">◀</button>
-              <img src={a.images[modalIndex]} alt={`${a.title} full ${modalIndex+1}`} className="w-full h-[70vh] object-contain rounded-lg bg-white/5" />
-              <button onClick={(e) => { e.stopPropagation(); setModalIndex((i) => (i + 1) % (a.images?.length || 1)); }} className="p-2 bg-white/10 rounded">▶</button>
-            </div>
+              <div className="flex flex-col md:flex-row items-center gap-4">
+                <button onClick={(e) => { e.stopPropagation(); setModalIndex((i) => (i - 1 + (a.images?.length || 1)) % (a.images?.length || 1)); }} className="p-2 bg-white/10 rounded">◀</button>
+                <img src={a.images[modalIndex]} alt={`${a.title} full ${modalIndex+1}`} className="w-full h-[50vh] md:h-[70vh] object-contain rounded-lg bg-white/5" />
+                <button onClick={(e) => { e.stopPropagation(); setModalIndex((i) => (i + 1) % (a.images?.length || 1)); }} className="p-2 bg-white/10 rounded">▶</button>
+              </div>
 
             <div className="mt-3 flex items-center justify-between">
               <div className="text-sm text-gray-300">{a.title} — {modalIndex+1}/{a.images.length}</div>

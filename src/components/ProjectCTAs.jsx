@@ -5,10 +5,7 @@ import Link from "next/link";
 export default function ProjectCTAs() {
   return (
     <section id="project-ctas" className="py-12 sm:py-16 lg:py-20 bg-transparent relative overflow-hidden">
-      {/* decorative background box behind CTAs (hidden on small screens) */}
-      <div className="hidden md:flex absolute inset-0 pointer-events-none items-center justify-center z-0">
-        <div className="w-80 h-44 md:w-96 md:h-56 rounded-2xl bg-gradient-to-br from-indigo-700/40 to-slate-900/30 shadow-2xl transform rotate-2 opacity-90" />
-      </div>
+      {/* decorative background box removed as requested */}
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <p className="text-lg md:text-xl font-semibold text-gray-200 mb-6">Want to see more of my credentials?</p>

@@ -8,30 +8,31 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-4 gap-12 items-start">
           {/* Left: portrait + stats */}
           <div className="flex flex-col items-center lg:col-span-1">
-            <div className="profile-wrap inline-block relative">
-              <svg className="profile-ornaments absolute -inset-2 w-[220px] h-[220px]" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+        <div className="profile-wrap inline-block relative">
+          {/* hide large ornaments on very small screens */}
+          <svg className="hidden sm:block profile-ornaments absolute -inset-2 w-[220px] h-[220px]" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                 <path d="M110 6 C150 6, 190 20, 210 60" className="arc arc-1" />
                 <path d="M210 160 C190 190, 150 214, 110 214" className="arc arc-2" />
                 <path d="M110 214 C70 214, 30 190, 10 160" className="arc arc-3" />
                 <path d="M10 60 C30 20, 70 6, 110 6" className="arc arc-4" />
               </svg>
 
-              <div className="w-64 h-64 rounded-full overflow-hidden shadow-2xl relative z-10 border-4 border-white bg-transparent">
+              <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl relative z-10 border-4 border-white bg-transparent">
                 <img src="/Profilepic.png" alt="Hasini Navindya" className="w-full h-full object-cover object-center bg-transparent" />
               </div>
             </div>
 
-            <div className="mt-10 flex items-center justify-center gap-6 w-full">
-              <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 text-center w-36">
-                <div className="text-2xl font-bold text-primary">10+</div>
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full">
+              <div className="bg-white dark:bg-gray-800 p-4 sm:p-5 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 text-center w-28 sm:w-36">
+                <div className="text-xl sm:text-2xl font-bold text-primary">10+</div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">Skills</div>
               </div>
-              <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 text-center w-36">
-                <div className="text-2xl font-bold text-primary">5+</div>
+              <div className="bg-white dark:bg-gray-800 p-4 sm:p-5 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 text-center w-28 sm:w-36">
+                <div className="text-xl sm:text-2xl font-bold text-primary">5+</div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">Projects</div>
               </div>
-              <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 text-center w-36">
-                <div className="text-2xl font-bold text-primary">10+</div>
+              <div className="bg-white dark:bg-gray-800 p-4 sm:p-5 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 text-center w-28 sm:w-36">
+                <div className="text-xl sm:text-2xl font-bold text-primary">10+</div>
                 <div className="text-xs text-gray-600 dark:text-gray-400">Certificates</div>
               </div>
             </div>
