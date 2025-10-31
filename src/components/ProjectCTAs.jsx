@@ -5,14 +5,18 @@ import Link from "next/link";
 export default function ProjectCTAs() {
   return (
     <section id="project-ctas" className="py-12 sm:py-16 lg:py-20 bg-transparent relative overflow-hidden">
-      
+      {/* decorative background box behind CTAs (hidden on small screens) */}
+      <div className="hidden md:flex absolute inset-0 pointer-events-none items-center justify-center z-0">
+        <div className="w-80 h-44 md:w-96 md:h-56 rounded-2xl bg-gradient-to-br from-indigo-700/40 to-slate-900/30 shadow-2xl transform rotate-2 opacity-90" />
+      </div>
+
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <p className="text-lg md:text-xl font-semibold text-gray-200 mb-6">Want to see more of my credentials?</p>
 
   <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
           <Link
             href="/certifications"
-            className="inline-block w-72 sm:w-80 md:w-96 text-center bg-primary-dark text-white font-semibold text-lg px-8 py-5 rounded-2xl shadow-lg hover:scale-102 transform transition-transform duration-200 focus:outline-none focus:ring-4 focus:ring-primary-dark/30 border-2 border-white/20"
+            className="inline-block w-full sm:w-72 md:w-96 text-center bg-primary-dark text-white font-semibold text-lg px-6 sm:px-8 py-4 sm:py-5 rounded-2xl shadow-lg hover:scale-102 transform transition-transform duration-200 focus:outline-none focus:ring-4 focus:ring-primary-dark/30 border-2 border-white/20"
             aria-label="View Certifications"
           >
             View Certifications
@@ -20,7 +24,7 @@ export default function ProjectCTAs() {
 
           <Link
             href="/achievements"
-            className="inline-block w-72 sm:w-80 md:w-96 text-center bg-white text-gray-900 font-semibold text-lg px-8 py-5 rounded-2xl shadow-lg hover:scale-102 transform transition-transform duration-200 focus:outline-none focus:ring-4 focus:ring-white/30"
+            className="inline-block w-full sm:w-72 md:w-96 text-center bg-white text-gray-900 font-semibold text-lg px-6 sm:px-8 py-4 sm:py-5 rounded-2xl shadow-lg hover:scale-102 transform transition-transform duration-200 focus:outline-none focus:ring-4 focus:ring-white/30"
             aria-label="View Achievements"
           >
             View Achievements

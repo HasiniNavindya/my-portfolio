@@ -12,7 +12,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="grid md:grid-cols-2 items-center gap-8">
           {/* Left Side */}
-          <div className="text-left pt-6">
+          <div className="order-last md:order-first text-left pt-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight">
               Hi, I'm
               <span className="block">
@@ -85,9 +85,9 @@ export default function HeroSection() {
           </div>
 
           {/* Right Side - Portrait */}
-          <div className="relative flex justify-end items-center pt-6">
+          <div className="order-first md:order-last relative flex justify-end items-center pt-6">
             <div className="relative w-full">
-              <div className="absolute top-1/2 right-6 md:right-12 lg:right-20 -translate-y-1/2">
+              <div className="md:absolute md:top-1/2 md:right-12 lg:right-20 md:-translate-y-1/2">
                 {/* decorative background box behind portrait */}
                   <div className="relative mb-6 z-30 hero-portrait profile-wrap">
                   {/* ornament removed: only solid white border around portrait per request */}
