@@ -16,10 +16,10 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8">
           <li><Link href="/" className="hover:text-primary-dark">Home</Link></li>
-          <li><Link href="/about" className="hover:text-primary-dark">About</Link></li>
-          <li><Link href="/projects" className="hover:text-primary-dark">Projects</Link></li>
-          <li><Link href="/projects" className="hover:text-primary-dark">Skills</Link></li>
-          <li><Link href="/contact" className="hover:text-primary-dark">Contact</Link></li>
+          <li><Link href="/#about" className="hover:text-primary-dark">About</Link></li>
+          <li><Link href="/#skills" className="hover:text-primary-dark">Skills</Link></li>
+          <li><Link href="/#projects" className="hover:text-primary-dark">Projects</Link></li>
+          <li><Link href="/#contact" className="hover:text-primary-dark">Contact</Link></li>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -36,11 +36,19 @@ export default function Navbar() {
       {isOpen && (
         <ul className="md:hidden mt-4 space-y-3 bg-gray-800 p-4 rounded-lg">
           <li><Link href="/" className="block hover:text-primary-dark" onClick={() => setIsOpen(false)}>Home</Link></li>
-          <li><Link href="/about" className="block hover:text-primary-dark" onClick={() => setIsOpen(false)}>About</Link></li>
-          <li><Link href="/projects" className="block hover:text-primary-dark" onClick={() => setIsOpen(false)}>Projects</Link></li>
-          <li><Link href="/contact" className="block hover:text-primary-dark" onClick={() => setIsOpen(false)}>Contact</Link></li>
+          <li><Link href="/#about" className="block hover:text-primary-dark" onClick={() => setIsOpen(false)}>About</Link></li>
+          <li><Link href="/#skills" className="block hover:text-primary-dark" onClick={() => setIsOpen(false)}>Skills</Link></li>
+          <li><Link href="/#projects" className="block hover:text-primary-dark" onClick={() => setIsOpen(false)}>Projects</Link></li>
+          <li><Link href="/#contact" className="block hover:text-primary-dark" onClick={() => setIsOpen(false)}>Contact</Link></li>
         </ul>
       )}
     </nav>
   );
 }
+
+
+
+
+
+
+ 

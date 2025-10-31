@@ -1,68 +1,108 @@
+"use client";
+
 import Image from "next/image";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { Typewriter } from "react-simple-typewriter";
+import BackgroundAnimation from "@/components/BackgroundAnimation";
 
 export default function HeroSection() {
   return (
-    <section className="bg-gray-50 dark:bg-gray-950 py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="relative bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center overflow-hidden">
+      <BackgroundAnimation />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="grid md:grid-cols-2 items-center gap-8">
-          {/* Left: Label + Heading + Copy + CTAs */}
+          {/* Left Side */}
           <div className="text-left pt-6">
-            <p className="text-sm uppercase tracking-wide font-medium text-primary-dark mb-4">UI/UX Designer</p>
-
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight">
               Hi, I'm
-              <span className="block"><span className="text-primary">Hasini Navindya</span></span>
+              <span className="block">
+                <span className="text-primary">Hasini Navindya</span>
+              </span>
             </h1>
 
-            <p className="mt-6 text-base text-gray-700 dark:text-gray-300 max-w-lg">
-              Frontend Developer passionate about crafting beautiful, responsive web experiences.
-              I build accessible interfaces and delightful interactions. You can add more information on the about page.
-            </p>
+            {/* Smaller Typewriter Section */}
+            <h2 className="mt-3 text-lg md:text-xl font-medium text-gray-800 dark:text-gray-300">
+              <Typewriter
+                words={[
+                  "Passionate about crafting seamless digital experiences through full-stack development, creative design, and smart engineering. 💻",
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={80}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
+            </h2>
 
+            {/* Buttons */}
             <div className="mt-8 flex items-center gap-4">
               <a
-                href="#projects"
-                className="inline-block bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-md shadow"
+                href="#contact"
+                className="inline-block border-2 border-primary-dark text-primary-dark px-4 py-2 rounded-md bg-transparent hover:bg-primary-dark hover:text-white transition-colors duration-300"
               >
-                Projects
+                Contact Me
               </a>
 
               <a
-                href="#contact"
-                className="inline-block border-2 border-primary-dark text-primary-dark px-4 py-2 rounded-md bg-transparent"
+                href="SE Intern CV.pdf"
+                target="_blank"
+                rel="noreferrer"
+                download
+                className="inline-block border-2 border-white/20 bg-primary-dark text-white px-4 py-2 rounded-md hover:brightness-90 transition-colors duration-300"
+                aria-label="Download resume"
               >
-                LinkedIn
+                Download CV
+              </a>
+            </div>
+
+            {/* Social Icons */}
+            <div className="mt-6 flex items-center gap-6">
+              <a
+                href="mailto:hasini.navindya001@gmail.com"
+                target="_blank"
+                className="text-white-700 hover:text-white hover:scale-125 transition duration-300 text-2xl"
+              >
+                <FaEnvelope />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/hasini-navindya-b82448271/"
+                target="_blank"
+                className="text-white-700 hover:text-white hover:scale-125 transition duration-300 text-2xl"
+              >
+                <FaLinkedin />
+              </a>
+
+              <a
+                href="https://github.com/HasiniNavindya"
+                target="_blank"
+                className="text-white-700 hover:text-white hover:scale-125 transition duration-300 text-2xl"
+              >
+                <FaGithub />
               </a>
             </div>
           </div>
 
-          {/* Right: organic blob + portrait */}
+          {/* Right Side - Portrait */}
           <div className="relative flex justify-end items-center pt-6">
-            {/* SVG blob background — uses primary color with low opacity */}
-            <svg viewBox="0 0 600 600" className="hidden md:block absolute right-0 w-[520px] h-[520px] -z-10" xmlns="http://www.w3.org/2000/svg">
-              <g transform="translate(300,300)">
-                <path d="M120,-158C150,-130,155,-80,166,-20C177,40,194,110,164,152C134,194,56,208,-6,210C-68,212,-135,202,-168,160C-201,118,-200,44,-183,0C-166,-44,-133,-77,-105,-111C-77,-145,-54,-180,-13,-194C28,-208,56,-206,120,-158Z" fill="rgba(0,119,182,0.14)" />
-              </g>
-            </svg>
-
             <div className="relative w-full">
-              {/* circular framed portrait: vertically centered on the right */}
               <div className="absolute top-1/2 right-6 md:right-12 lg:right-20 -translate-y-1/2">
-                <div className="relative">
-                  {/* circular ring with image filling the circle */}
-                  <div className="w-56 md:w-80 lg:w-[420px] aspect-square rounded-full ring-8 ring-primary bg-white dark:bg-gray-950 shadow-2xl overflow-hidden">
-                    <Image
+                {/* decorative background box behind portrait */}
+                  <div className="relative mb-6 z-30 hero-portrait profile-wrap">
+                  {/* ornament removed: only solid white border around portrait per request */}
+                  <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full shadow-2xl border-4 border-white bg-transparent overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105">
+                    <img
                       src="/Profilepic.png"
-                      alt="Profile"
-                      fill
-                      priority
-                      className="object-cover object-center"
+                      alt="Hasini Navindya"
+                      className="w-full h-full object-cover object-center bg-transparent"
                     />
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

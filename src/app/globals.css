@@ -1,8 +1,62 @@
+.about-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1.1em;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.04);
+  color: #e6eef2;
+  box-shadow: 0 2px 12px rgba(0,119,182,0.08);
+  border: 1px solid rgba(0,119,182,0.12);
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s, border 0.2s;
+  cursor: pointer;
+}
+.about-badge:hover {
+  border-color: #fff;
+}
+
+.about-cta {
+  background: transparent;
+  color: #fff;
+  box-shadow: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: 2px solid rgba(255,255,255,0.85);
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  transition: background 220ms ease, transform 160ms ease, color 180ms ease;
+}
+.about-cta::after {
+  content: "";
+  position: absolute;
+  left: -40%;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  background: rgba(255,255,255,0.12);
+  transform: skewX(-20deg) translateX(0);
+  transition: transform 420ms ease;
+  pointer-events: none;
+}
+.about-cta:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  transform: translateY(-3px);
+}
+.about-cta:hover::after {
+  transform: skewX(-20deg) translateX(220%);
+}
 @import "tailwindcss";
 
 :root {
-  --background: #F8F9FA; /* light gray main background */
-  --foreground: #212529; /* almost black body text */
+  /* deep navy base color for the whole site */
+  --background: #052235; /* navy */
+  --foreground: #E6EEF2; /* soft light text */
+  /* unified section background - change this to pick a single color for all sections */
+  --section-bg: var(--background);
   /* moved from removed @theme inline */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,8 +66,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+      --background: #021521;
+      --foreground: #e6eef2;
+      /* keep section background in dark mode consistent with page background */
+      --section-bg: var(--background);
   }
 }
 
@@ -22,6 +78,36 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Make every section share a single background color across the site.
+   This overrides per-component bg-* classes. If you want a section to keep
+   its own background, add the class `section-no-unify` to that <section>. */
+section {
+  background: var(--section-bg) !important;
+}
+
+.section-no-unify {
+  background: unset !important;
+}
+
+/* Global animated background (canvas-driven glitter) */
+.global-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -20; /* behind all content */
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+}
+.global-bg canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+/* Make sections transparent by default so the site-wide background shows through */
+section { background: transparent !important; }
+
 
 /* Decorative diagonal brush behind hero portrait */
 .hero-brush {
@@ -47,5 +133,215 @@ body {
 }
 .hero-image-animate {
   animation: heroImageIn 700ms cubic-bezier(.2,.9,.3,1) both;
+}
+
+/* Background animation overlay: subtle white/light-gray blobs and particles */
+.bg-anim-overlay {
+  position: absolute; /* positioned inside hero only */
+  inset: 0;
+  pointer-events: none; /* don't block interactions */
+  z-index: 0; /* base inside hero; content should be above */
+  overflow: visible;
+}
+
+.bg-anim-overlay .particles {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: overlay;
+}
+
+.bg-anim-overlay .p {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255,255,255,1);
+  border-radius: 50%;
+  opacity: 0.75;
+  transform: translate3d(0,0,0);
+  animation: twinkle 2.4s infinite cubic-bezier(.4,0,.2,1);
+  mix-blend-mode: screen;
+  will-change: opacity, transform;
+  transition: opacity 180ms cubic-bezier(.4,0,.2,1), transform 300ms cubic-bezier(.4,0,.2,1);
+}
+
+/* Individual particle positions and durations */
+.bg-anim-overlay .p:nth-child(1) { left: 6%; top: 12%; animation-duration: 12s; animation-delay: -2s; }
+.bg-anim-overlay .p:nth-child(2) { left: 18%; top: 36%; animation-duration: 18s; animation-delay: -6s; }
+.bg-anim-overlay .p:nth-child(3) { left: 30%; top: 72%; animation-duration: 15s; animation-delay: -4s; }
+.bg-anim-overlay .p:nth-child(4) { left: 46%; top: 8%; animation-duration: 20s; animation-delay: -8s; }
+.bg-anim-overlay .p:nth-child(5) { left: 62%; top: 22%; animation-duration: 16s; animation-delay: -1s; }
+.bg-anim-overlay .p:nth-child(6) { left: 76%; top: 44%; animation-duration: 13s; animation-delay: -3s; }
+.bg-anim-overlay .p:nth-child(7) { left: 84%; top: 66%; animation-duration: 19s; animation-delay: -5s; }
+.bg-anim-overlay .p:nth-child(8) { left: 12%; top: 82%; animation-duration: 17s; animation-delay: -7s; }
+.bg-anim-overlay .p:nth-child(9) { left: 22%; top: 52%; animation-duration: 21s; animation-delay: -9s; }
+.bg-anim-overlay .p:nth-child(10){ left: 38%; top: 40%; animation-duration: 14s; animation-delay: -2s; }
+.bg-anim-overlay .p:nth-child(11){ left: 54%; top: 12%; animation-duration: 18s; animation-delay: -6s; }
+.bg-anim-overlay .p:nth-child(12){ left: 68%; top: 28%; animation-duration: 15s; animation-delay: -4s; }
+.bg-anim-overlay .p:nth-child(13){ left: 88%; top: 6%; animation-duration: 22s; animation-delay: -8s; }
+.bg-anim-overlay .p:nth-child(14){ left: 44%; top: 78%; animation-duration: 16s; animation-delay: -1s; }
+.bg-anim-overlay .p:nth-child(15){ left: 70%; top: 82%; animation-duration: 20s; animation-delay: -3s; }
+.bg-anim-overlay .p:nth-child(16){ left: 8%; top: 48%; animation-duration: 18s; animation-delay: -5s; }
+.bg-anim-overlay .p:nth-child(17){ left: 52%; top: 56%; animation-duration: 17s; animation-delay: -7s; }
+.bg-anim-overlay .p:nth-child(18){ left: 92%; top: 52%; animation-duration: 19s; animation-delay: -4s; }
+
+
+@keyframes twinkle {
+  0% { opacity: 0.2; transform: translateY(0) scale(0.75); }
+  50% { opacity: 1; transform: translateY(-6px) scale(1.12); }
+  100% { opacity: 0.2; transform: translateY(0) scale(0.75); }
+}
+
+/* Hero-scoped overlay: ensure overlay sits behind hero content */
+.hero-anim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Portrait container should sit above the hero overlay */
+.hero-portrait, .hero-portrait * {
+  position: relative;
+  z-index: 20;
+}
+
+/* Floating portrait effect used in AboutSection */
+.image-float {
+  --float-distance: 8px;
+  animation: floatPortrait 6s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes floatPortrait {
+  0% { transform: translateY(0) rotate(0.001deg); }
+  50% { transform: translateY(-var(--float-distance)) rotate(0.001deg); }
+  100% { transform: translateY(0) rotate(0.001deg); }
+}
+
+/* Animated profile background ring */
+.profile-wrap {
+  display: inline-block;
+  position: relative;
+}
+.profile-ornaments {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.12);
+  z-index: 2;
+  overflow: visible;
+  pointer-events: none;
+  opacity: 0.98;
+}
+.profile-ornaments .arc {
+  fill: none;
+  stroke: rgba(255,255,255,0.95);
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* dash pattern to create separated arcs */
+  stroke-dasharray: 80 36;
+  stroke-dashoffset: 0;
+  transition: transform 360ms ease, opacity 240ms ease, filter 240ms ease;
+}
+
+.profile-wrap .profile-ornaments { transform: translate(-50%, -50%) scale(1.0); }
+/* subtle hover highlight (no rotation) */
+.profile-wrap:hover .profile-ornaments { transform: translate(-50%, -50%) scale(1.02); opacity: 1; filter: drop-shadow(0 6px 10px rgba(255,255,255,0.04)); }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-ornaments, .profile-ornaments .arc { animation: none !important; transition: none !important; stroke-dashoffset: 0; }
+}
+
+/* Role button visual tweaks used in AboutSection */
+.about-role-btn {
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.about-role-btn[aria-pressed="true"] {
+  box-shadow: 0 8px 24px rgba(0,119,182,0.18);
+}
+
+.about-role-btn:hover {
+  background: var(--primary, #0077B6);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,119,182,0.18);
+}
+
+/* Add per-particle variation for natural feel */
+.bg-anim-overlay .p:nth-child(odd) { animation-duration: 3.6s; animation-delay: -1.2s; }
+.bg-anim-overlay .p:nth-child(even) { animation-duration: 4.8s; animation-delay: -2.6s; }
+.bg-anim-overlay .p.p1 { left: 6%; top: 12%; }
+.bg-anim-overlay .p.p2 { left: 18%; top: 36%; }
+.bg-anim-overlay .p.p3 { left: 30%; top: 72%; }
+.bg-anim-overlay .p.p4 { left: 46%; top: 8%; }
+.bg-anim-overlay .p.p5 { left: 62%; top: 22%; }
+.bg-anim-overlay .p.p6 { left: 76%; top: 44%; }
+.bg-anim-overlay .p.p7 { left: 84%; top: 66%; }
+.bg-anim-overlay .p.p8 { left: 12%; top: 82%; }
+.bg-anim-overlay .p.p9 { left: 22%; top: 52%; }
+.bg-anim-overlay .p.p10{ left: 38%; top: 40%; }
+.bg-anim-overlay .p.p11{ left: 54%; top: 12%; }
+.bg-anim-overlay .p.p12{ left: 68%; top: 28%; }
+.bg-anim-overlay .p.p13{ left: 88%; top: 6%; }
+.bg-anim-overlay .p.p14{ left: 44%; top: 78%; }
+.bg-anim-overlay .p.p15{ left: 70%; top: 82%; }
+.bg-anim-overlay .p.p16{ left: 8%; top: 48%; }
+.bg-anim-overlay .p.p17{ left: 52%; top: 56%; }
+.bg-anim-overlay .p.p18{ left: 92%; top: 52%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-anim-overlay .p {
+    animation: none;
+    transition: none;
+    opacity: 0.5;
+    transform: none;
+  }
+}
+
+/* Keep input and textarea visually transparent even when browser autofills them (Chrome) */
+input, textarea {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+/* Chrome autofill override */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* placeholder color consistent */
+::placeholder {
+  color: rgba(255,255,255,0.55) !important;
+}
+
+/* Ensure form area sits above cards */
+.contact-form-front {
+  position: relative;
+  z-index: 20;
+}
+
+/* Specific rules for the contact section: use dark-blue text for typed input and textarea, and a blue placeholder */
+.contact-section input,
+.contact-section textarea {
+  color: #0b3b66 !important; /* dark blue text for fields inside contact */
+}
+
+.contact-section ::placeholder {
+  color: #7aaed0 !important; /* placeholder slightly blue */
+}
+
+/* Autofill inside contact section should keep dark-blue text */
+.contact-section input:-webkit-autofill,
+.contact-section textarea:-webkit-autofill {
+  -webkit-text-fill-color: #0b3b66 !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
 }
 

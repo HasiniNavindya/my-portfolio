@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "FIT - CodeRush",
+    "year": "2024",
+    "place": "2nd Place",
+    "organizer": "INTECS - University of Moratuwa",
+    "images": [
+      "/achievements/coderush0.jpg",
+      "/achievements/coderush1.jpg"
+      
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Devthon 2.0",
+    "year": "2025",
+    "place": "3rd Place",
+    "organizer": "Leo Club - University of Moratuwa",
+    "images": [
+      "/achievements/dev0.jpg",
+      "/achievements/dev1.jpg"
+      
+    ]
+  },
+  {
+    "id": 3,
+    "title": "CodeAréna'25",
+    "year": "2025",
+    "place": "2nd Place",
+    "organizer": "IET KDU - General Sir John Kotelawala Defence University",
+    "images": [
+      "/achievements/arena1.jpg",
+      "/achievements/arena2.jpg"
+    ]
+  }
+]

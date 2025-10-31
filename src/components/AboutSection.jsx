@@ -1,30 +1,76 @@
-// src/components/AboutSection.jsx
+"use client";
+import { PiCodeBold, PiMonitorBold, PiPencilBold } from "react-icons/pi";
+
 export default function AboutSection() {
   return (
-    <section className="bg-gray-950 text-white py-24 px-6" id="about">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
-        {/* Left side: Text */}
-        <div className="md:w-1/2">
-          <h2 className="text-3xl font-bold text-primary-dark mb-4">About Me</h2>
-          <p className="text-gray-300 mb-4">
-            Hi! Im <strong>Hasini Navindya</strong>, a passionate Frontend Developer.
-            I enjoy creating responsive, user-friendly web experiences and learning
-            new technologies every day.
-          </p>
-          <p className="text-gray-300">
-            My focus is on building web applications with clean code, interactive
-            UI, and smooth animations. I am constantly improving my skills and
-            exploring the latest frontend technologies.
-          </p>
-        </div>
+    <section className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white py-24 px-6" id="about">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-4 gap-12 items-start">
+          {/* Left: portrait + stats */}
+          <div className="flex flex-col items-center lg:col-span-1">
+            <div className="profile-wrap inline-block relative">
+              <svg className="profile-ornaments absolute -inset-2 w-[220px] h-[220px]" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                <path d="M110 6 C150 6, 190 20, 210 60" className="arc arc-1" />
+                <path d="M210 160 C190 190, 150 214, 110 214" className="arc arc-2" />
+                <path d="M110 214 C70 214, 30 190, 10 160" className="arc arc-3" />
+                <path d="M10 60 C30 20, 70 6, 110 6" className="arc arc-4" />
+              </svg>
 
-        {/* Right side: Image */}
-        <div className="md:w-1/2">
-          <img
-            src="/profile.jpg"
-            alt="About Me"
-            className="rounded-xl shadow-lg ring-4 ring-primary"
-          />
+              <div className="w-64 h-64 rounded-full overflow-hidden shadow-2xl relative z-10 border-4 border-white bg-transparent">
+                <img src="/Profilepic.png" alt="Hasini Navindya" className="w-full h-full object-cover object-center bg-transparent" />
+              </div>
+            </div>
+
+            <div className="mt-10 flex items-center justify-center gap-6 w-full">
+              <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 text-center w-36">
+                <div className="text-2xl font-bold text-primary">10+</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400">Skills</div>
+              </div>
+              <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 text-center w-36">
+                <div className="text-2xl font-bold text-primary">5+</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400">Projects</div>
+              </div>
+              <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 text-center w-36">
+                <div className="text-2xl font-bold text-primary">10+</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400">Certificates</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: content */}
+          <div className="lg:col-span-3 space-y-6 lg:pl-24">
+            <div className="text-center lg:text-left mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-dark">About Me</h2>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Hi, I'm <span className="text-primary">Hasini Navindya</span></h3>
+              <div className="space-y-4 max-w-3xl">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  An undergraduate at the University of Moratuwa, pursuing a B.Sc. (Hons) in Information Technology and Management.
+                </p>
+
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  I enjoy building digital experiences that are not only functional but also visually engaging and user-friendly. Beyond coding, I love designing intuitive interfaces, exploring new tools, and continuously learning to grow as a developer and designer. My goal is to create meaningful solutions that make technology feel more human.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <div className="text-sm text-gray-400 mb-2">I’m passionate about,</div>
+              <div className="flex flex-row gap-3 flex-wrap">
+                <span className="about-badge whitespace-nowrap"><PiCodeBold className="text-xl mr-2"/> Software Engineer</span>
+                <span className="about-badge whitespace-nowrap"><PiMonitorBold className="text-xl mr-2"/> Full Stack Developer</span>
+                <span className="about-badge whitespace-nowrap"><PiPencilBold className="text-xl mr-2"/> UI/UX Designer</span>
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <a href="#contact" className="about-cta inline-flex items-center px-6 py-3 rounded-lg">
+                Let's Work Together
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

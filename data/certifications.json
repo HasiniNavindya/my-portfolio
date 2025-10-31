@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "title": "Web Design for Beginners",
+    "issuer": "University of Moratuwa",
+    "year": "2023",
+    "link": "#",
+    "image": "/certs/uomwebbeg.png"
+  },
+  {
+    "id": 2,
+    "title": "Introduction to HTML",
+    "issuer": "Sololearn",
+    "year": "2024",
+    "link": "#",
+    "image": "/certs/html.jpg"
+  },
+ {
+    "id": 3,
+    "title": "Introduction to C",
+    "issuer": "Sololearn",
+    "year": "2024",
+    "link": "#",
+    "image": "/certs/IntroC.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Frontend Developer - React",
+    "issuer": "HackerRank",
+    "year": "2023",
+    "link": "#",
+    "image": "/certs/react.png"
+  },
+
+ 
+  {
+    "id": 5,
+    "title": "Introduction to SQL",
+    "issuer": "Sololearn",
+    "year": "2024",
+    "link": "#",
+    "image": "/certs/sql.jpg"
+  },
+  {
+    "id": 6,
+    "title": "SQL Intermediate",
+    "issuer": "Sololearn",
+    "year": "2025",
+    "link": "#",
+    "image": "/certs/sqlint.jpg"
+  },
+  {
+    "id": 7,
+    "title": "SQL (Basic)",
+    "issuer": "HackerRank",
+    "year": "2025",
+    "link": "#",
+    "image": "/certs/sqlbasic.png"
+  },
+
+    {
+    "id": 8,
+    "title": "SQL Intermediate",
+    "issuer": "HackerRank",
+    "year": "2025",
+    "link": "#",
+    "image": "/certs/sqlinthack.png"
+  },
+  {
+    "id": 9,
+    "title": "UI/UX for Beginners",
+    "issuer": "Great Learning Academy",
+    "year": "2024",
+    "link": "#",
+    "image": "/certs/uiux.jpg"
+  }
+]
