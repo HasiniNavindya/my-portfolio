@@ -155,7 +155,7 @@ export default function ProjectsSection() {
                         href={project.post}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex-1 inline-flex items-center justify-center gap-2 bg-primary-dark text-white font-semibold px-5 py-2.5 rounded-lg hover:brightness-90 transition-colors text-center"
+                        className="flex-1 inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-semibold px-5 py-2.5 rounded-lg hover:bg-gray-100 transition-colors text-center border border-white/20"
                       >
                         View Post
                       </a>
