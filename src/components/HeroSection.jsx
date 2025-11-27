@@ -38,7 +38,7 @@ export default function HeroSection() {
             {/* Buttons */}
             <div className="mt-8 flex items-center gap-4">
                <a
-                href="SE Intern_CV.pdf"
+                href="SE Intern CV.pdf"
                 target="_blank"
                 rel="noreferrer"
                 download

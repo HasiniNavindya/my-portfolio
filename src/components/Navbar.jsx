@@ -9,8 +9,14 @@ export default function Navbar() {
     <nav className="bg-gray-900 text-white px-6 py-4 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-  <Link href="/" className="text-2xl font-bold text-primary-dark">
-          MyPortfolio
+        <Link href="/" className="flex items-center gap-3 text-2xl font-bold text-primary-dark">
+          {/* simple SVG monogram logo (HNW) to match personal brand */}
+           
+              <text x="50%" y="54%" textAnchor="middle" fontSize="14" fill="#f8fafc" fontFamily="sans-serif">H_N.</text>
+            
+       
+          <span className="sr-only">Hasini Navindya</span>
+          
         </Link>
 
         {/* Desktop Menu */}
